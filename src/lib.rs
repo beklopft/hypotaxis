@@ -13,6 +13,22 @@ pub trait Changeable: Sized {
             self
         }
     }
+
+    fn if_else<F, T>(
+        self,
+        condition: bool,
+        change: F,
+        default_change: F
+    ) -> T
+    where
+        F: FnOnce(Self) -> T
+    {
+        if condition {
+            change(self)
+        } else {
+            default_change(self)
+        }
+    }
 }
 
 impl<T: 'static> Changeable for T {}
