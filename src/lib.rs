@@ -6,6 +6,8 @@ mod tap;
 pub trait Changeable: Sized {
     r#if!{}
     if_else!{}
+    if_eval!{}
+    if_eval_else!{}
     apply!{}
     tap!{}
     mutated!{}
