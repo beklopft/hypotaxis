@@ -1,4 +1,4 @@
-use if_method::Changeable;
+use chainsmith::Changeable;
 
 #[test]
 fn change() {
