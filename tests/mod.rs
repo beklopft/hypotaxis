@@ -71,7 +71,7 @@ fn iterators() {
         .if_else(
             !ACCEPT_IMPOSSIBLE, 
             |percentages| percentages
-                .filter(|percentage| percentage.is_impossible()),
+                .filter(|percentage| !percentage.is_impossible()),
             |percentages| percentages
                 .filter(|x| true)
         )
