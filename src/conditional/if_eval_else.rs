@@ -1,16 +1,16 @@
 #[macro_export]
 macro_rules! if_eval_else { () => {
-    fn if_eval_else<C, F, T>(
+    fn if_eval_else<P, F, T>(
         self,
-        condition: C,
+        predicate: P,
         change: F,
         default_change: F
     ) -> T
     where
-        C: FnOnce(&Self) -> bool,
+        P: FnOnce(&Self) -> bool,
         F: FnOnce(Self) -> T
     {
-        if condition(&self) {
+        if predicate(&self) {
             change(self)
         } else {
             default_change(self)
