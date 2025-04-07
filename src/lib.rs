@@ -4,8 +4,7 @@ pub trait Changeable: Sized {
         condition: bool,
         change: F
     ) -> Self
-    where
-        F: FnOnce(Self) -> Self
+    where F: FnOnce(Self) -> Self
     {
         if condition {
             change(self)
@@ -20,14 +19,34 @@ pub trait Changeable: Sized {
         change: F,
         default_change: F
     ) -> T
-    where
-        F: FnOnce(Self) -> T
+    where F: FnOnce(Self) -> T
     {
         if condition {
             change(self)
         } else {
             default_change(self)
         }
+    }
+
+    fn apply<F, T>(
+        self,
+        change: F
+    ) -> T
+    where F: FnOnce(Self) -> T
+    {
+        change(self)
+    }
+
+    //inspired by the tap crate
+    fn tap<F>(
+        self,
+        func: F
+    ) -> Self
+    where F: FnOnce(&Self) -> Self
+    {
+        func(&self);
+
+        self
     }
 }
 
