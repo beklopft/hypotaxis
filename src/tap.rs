@@ -1,4 +1,3 @@
-#[macro_export]
 macro_rules! tap { () => {
     //inspired by the tap crate
     fn tap<F>(
@@ -12,3 +11,5 @@ macro_rules! tap { () => {
         self
     }
 }}
+
+pub(crate) use tap;

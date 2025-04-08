@@ -1,4 +1,3 @@
-#[macro_export]
 macro_rules! r#if { () => {
     fn r#if<F>(
         self,
@@ -14,3 +13,5 @@ macro_rules! r#if { () => {
         }
     }
 }}
+
+pub(crate) use r#if;

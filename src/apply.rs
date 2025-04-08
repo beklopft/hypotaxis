@@ -1,4 +1,3 @@
-#[macro_export]
 macro_rules! apply { () => {
     fn apply<F, T>(
         self,
@@ -9,3 +8,5 @@ macro_rules! apply { () => {
         change(self)
     }
 }}
+
+pub(crate) use apply;

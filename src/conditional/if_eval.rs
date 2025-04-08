@@ -1,4 +1,3 @@
-#[macro_export]
 macro_rules! if_eval { () => {
     fn if_eval<P, F>(
         self,
@@ -16,3 +15,5 @@ macro_rules! if_eval { () => {
         }
     }
 }}
+
+pub(crate) use if_eval;

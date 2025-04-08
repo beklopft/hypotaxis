@@ -1,4 +1,3 @@
-#[macro_export]
 macro_rules! mutated { () => {
     fn mutated<F>(
         self,
@@ -12,3 +11,5 @@ macro_rules! mutated { () => {
         value
     }
 }}
+
+pub(crate) use mutated;

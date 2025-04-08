@@ -3,6 +3,11 @@ mod conditional;
 mod mutated;
 mod tap;
 
+use apply::apply;
+use conditional::*;
+use mutated::mutated;
+use tap::tap;
+
 pub trait Changeable: Sized {
     r#if!{}
     if_else!{}
