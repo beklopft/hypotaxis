@@ -4,7 +4,7 @@ macro_rules! if_else { () => {
     /// [`if`] `if_else` can change the return type.
     /// 
     /// ```
-    /// use hypotaxis::Changeable;
+    /// use hypotaxis::ChainLink;
     /// 
     /// const ALWAYS_MORE: bool = true;
     ///

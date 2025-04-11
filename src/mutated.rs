@@ -5,7 +5,7 @@ macro_rules! mutated { () => {
     /// # Examples
     /// 
     /// ```
-    /// use hypotaxis::Changeable;
+    /// use hypotaxis::ChainLink;
     /// 
     /// #[derive(Debug, PartialEq)]
     /// struct Person(String);

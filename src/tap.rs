@@ -4,7 +4,7 @@ macro_rules! tap { () => {
     /// # Examples
     /// 
     /// ```
-    /// use hypotaxis::Changeable;
+    /// use hypotaxis::ChainLink;
     /// 
     /// let passcode = 33344850294026550922u128;
     /// 

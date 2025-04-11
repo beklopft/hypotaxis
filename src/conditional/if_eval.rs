@@ -5,7 +5,7 @@ macro_rules! if_eval { () => {
     /// # Examples
     /// 
     /// ```
-    /// use hypotaxis::Changeable;
+    /// use hypotaxis::ChainLink;
     ///
     /// let indexes = [1, 2, 3, 4, 5].to_vec();
     /// 

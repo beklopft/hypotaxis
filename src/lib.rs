@@ -8,7 +8,7 @@ use conditional::*;
 use mutated::mutated;
 use tap::tap;
 
-pub trait Changeable: Sized {
+pub trait ChainLink: Sized {
     r#if!{}
     if_else!{}
     if_eval!{}
@@ -18,4 +18,4 @@ pub trait Changeable: Sized {
     mutated!{}
 }
 
-impl<T> Changeable for T {}
+impl<T> ChainLink for T {}

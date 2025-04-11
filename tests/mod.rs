@@ -1,4 +1,4 @@
-use hypotaxis::Changeable;
+use hypotaxis::ChainLink;
 
 #[test]
 fn change() {
