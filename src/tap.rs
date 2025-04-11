@@ -4,7 +4,7 @@ macro_rules! tap { () => {
     /// # Examples
     /// 
     /// ```
-    /// use chainsmith::Changeable;
+    /// use hypotaxis::Changeable;
     /// 
     /// let passcode = 33344850294026550922u128;
     /// 

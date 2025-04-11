@@ -4,7 +4,7 @@ macro_rules! r#if { () => {
     /// # Examples
     /// 
     /// ```
-    /// use chainsmith::Changeable;
+    /// use hypotaxis::Changeable;
     /// use std::io::{stdout, IsTerminal};
     ///
     /// std::process::Command::new("ls")

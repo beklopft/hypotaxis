@@ -5,7 +5,7 @@ macro_rules! mutated { () => {
     /// # Examples
     /// 
     /// ```
-    /// use chainsmith::Changeable;
+    /// use hypotaxis::Changeable;
     /// 
     /// #[derive(Debug, PartialEq)]
     /// struct Person(String);

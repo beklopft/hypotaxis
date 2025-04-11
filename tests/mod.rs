@@ -1,4 +1,4 @@
-use chainsmith::Changeable;
+use hypotaxis::Changeable;
 
 #[test]
 fn change() {
