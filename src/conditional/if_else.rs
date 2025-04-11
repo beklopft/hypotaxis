@@ -1,11 +1,34 @@
 macro_rules! if_else { () => {
-    fn if_else<F, T>(
+    /// Applies one closure if the condition is `true`,
+    /// otherwise applies the other closure. Other than
+    /// [`if`] `if_else` can change the return type.
+    /// 
+    /// ```
+    /// use chainsmith::Changeable;
+    /// 
+    /// const ALWAYS_MORE: bool = true;
+    ///
+    /// let longer = [1, 2, 3]
+    ///     .into_iter()
+    ///     .if_else(
+    ///         ALWAYS_MORE,
+    ///         |iter| iter.chain(vec![4, 5, 6]),
+    ///         |iter| iter.chain(vec![])
+    ///     )
+    ///     .collect::<Vec<_>>()
+    /// ;
+    ///
+    /// assert_eq!(longer, [1, 2, 3, 4, 5, 6].to_vec())
+    /// ```
+    fn if_else<A, B, T>(
         self,
         condition: bool,
-        change: F,
-        default_change: F
+        change: A,
+        default_change: B
     ) -> T
-    where F: FnOnce(Self) -> T
+    where
+        A: FnOnce(Self) -> T,
+        B: FnOnce(Self) -> T
     {
         if condition {
             change(self)

@@ -18,4 +18,4 @@ pub trait Changeable: Sized {
     mutated!{}
 }
 
-impl<T: 'static> Changeable for T {}
+impl<T> Changeable for T {}
