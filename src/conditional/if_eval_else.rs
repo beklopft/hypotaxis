@@ -1,8 +1,9 @@
 macro_rules! if_eval_else { () => {
     /// Applies one closure if the predicate
     /// evaluates to true, otherwise applies the
-    /// other closure. Other than [`if_eval`]
-    /// `if_eval_else` can change the return type.
+    /// other closure. Other than
+    /// [`if_eval()`](./trait.ChainLink.html#method.if_eval)
+    /// `if_eval_else()` can change the return type.
     /// 
     /// # Examples
     /// 

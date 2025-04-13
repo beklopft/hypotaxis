@@ -1,7 +1,7 @@
 macro_rules! if_else { () => {
     /// Applies one closure if the condition is `true`,
     /// otherwise applies the other closure. Other than
-    /// [`if`] `if_else` can change the return type.
+    /// [`if()`](./trait.ChainLink.html#method.if) `if_else()` can change the return type.
     /// 
     /// ```
     /// use hypotaxis::ChainLink;

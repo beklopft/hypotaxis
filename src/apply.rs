@@ -1,7 +1,9 @@
 macro_rules! apply { () => {
     /// Applies the closure on the input value. This
     /// can give you a block inside the method chain.
-    /// This is to a single type what [`map`] is to
+    /// `apply()` is to a single type what
+    /// [`map()`](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.map)
+    /// is to
     /// every item of an terator.
     /// 
     /// # Examples
