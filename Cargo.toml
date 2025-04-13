@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 description = "Uninterrupted method chaining"
 categories = ["rust-patterns, no-std"]
-keywords = ["functional"]
+keywords = ["functional, chaining"]
 license = "MIT"
 exclude = ["/tests/"]
 
