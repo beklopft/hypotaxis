@@ -1,7 +1,7 @@
 use hypotaxis::ChainLink;
 
 #[test]
-fn readme_with_crate() {
+fn readme_example_with_crate() {
     #[derive(Debug, Clone, PartialEq)]
     struct Point {
         x: f64,
@@ -52,7 +52,7 @@ fn readme_with_crate() {
 }
 
 #[test]
-fn readme_without_crate() {
+fn readme_example_without_crate() {
     #[derive(Debug, Clone, PartialEq)]
     struct Point {
         x: f64,
@@ -104,7 +104,7 @@ fn readme_without_crate() {
 }
 
 #[test]
-fn change() {
+fn condition_true() {
     let value = 1i32;
     let too_small = true;
 
@@ -117,7 +117,7 @@ fn change() {
 }
 
 #[test]
-fn default() {
+fn condition_false() {
     let value = 1;
     let too_small = false;
 
