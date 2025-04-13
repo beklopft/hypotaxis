@@ -2,6 +2,10 @@
 name = "hypotaxis"
 version = "0.1.0"
 edition = "2021"
+description = "Uninterrupted method chaining"
+categories = ["rust-patterns"]
+keywords = ["functional"]
+license = "MIT"
 exclude = ["/tests/"]
 
 [dependencies]
