@@ -77,7 +77,7 @@ fn readme_without_crate() {
         (Point::new(9.09, -8.62), 0.550),
     ];
 
-    let mut full_raw_data = if NEW_DATA_VALID {
+    let full_raw_data = if NEW_DATA_VALID {
         [raw_data.to_vec(), new_raw_data.to_vec()].concat()
     } else {
         raw_data.to_vec()
