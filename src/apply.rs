@@ -1,10 +1,14 @@
 macro_rules! apply { () => {
     /// Applies the closure on the input value. This
     /// can give you a block inside the method chain.
+    /// This is to a single type what [`map`] is to
+    /// every item of an terator.
     /// 
     /// # Examples
     /// 
     /// ```
+    /// use hypotaxis::ChainLink;
+    /// 
     /// let appointment_day = 11;
     /// 
     /// let reminder_date = appointment_day

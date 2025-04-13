@@ -7,6 +7,8 @@ macro_rules! if_eval_else { () => {
     /// # Examples
     /// 
     /// ```
+    /// use hypotaxis::ChainLink;
+    /// 
     /// let data = [2.26, 3.32, 3.78, 9.39, 7.51];
     ///
     /// let final_data = data
