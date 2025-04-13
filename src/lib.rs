@@ -1,3 +1,4 @@
+#![no_std]
 mod apply;
 mod conditional;
 mod mutated;
