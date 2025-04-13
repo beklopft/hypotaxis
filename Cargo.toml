@@ -7,5 +7,3 @@ categories = ["rust-patterns, no-std"]
 keywords = ["functional, chaining"]
 license = "MIT"
 exclude = ["/tests/"]
-
-[dependencies]
