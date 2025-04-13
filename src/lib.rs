@@ -1,3 +1,11 @@
+//! The [ChainLink](https://docs.rs/hypotaxis/0.1.0/hypotaxis/trait.ChainLink.html)
+//! trait with a blanket implementation gives access to methods that can help to
+//! create longer method chains.
+//! 
+//! ```rust
+//! use hypotaxis::ChainLink;
+//! ```
+
 #![no_std]
 mod apply;
 mod conditional;
