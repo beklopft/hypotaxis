@@ -6,4 +6,5 @@ description = "Uninterrupted method chaining"
 categories = ["rust-patterns, no-std"]
 keywords = ["functional, chaining"]
 license = "MIT"
+repository = "https://github.com/beklopft/hypotaxis"
 exclude = ["/tests/"]
