@@ -4,13 +4,13 @@ use hypotaxis::ChainLink;
 
 let finalized_data = raw_data
     .to_vec()
-    .r#if(NEW_DATA_VALID, |original_data|                  //new
+    .r#if(NEW_DATA_VALID, |original_data|
         [original_data, new_raw_data.to_vec()].concat()
     )
-    .mutated(|data| data                                   //new
+    .mutated(|data| data
         .sort_by(|a, b| a.1.total_cmp(&b.1))
     )
-    .tap(|data| {                                          //new
+    .tap(|data| {
         assert!( data.iter()
             .all(|(_, probability)| (0.0..=1.0).contains(probability))
         )
@@ -18,6 +18,9 @@ let finalized_data = raw_data
     .into_iter()
     .filter(|(_point, probability)| *probability > 0.0)
     .collect::<Vec<_>>()
+    .apply(|data|
+        ProbabilityMap { data }
+    )
 ;
 ```
 instead of
@@ -35,11 +38,12 @@ assert!( sorted.iter()
     .all(|(_, probability)| (0.0..=1.0).contains(probability))
 );
 
-let finalized_data = sorted
-    .into_iter()
-    .filter(|(_point, probability)| *probability > 0.0)
-    .collect::<Vec<_>>()
-;
+let finalized_data = ProbabilityMap {
+    data: sorted
+        .into_iter()
+        .filter(|(_point, probability)| *probability > 0.0)
+        .collect::<Vec<_>>()
+};
 ```
 
 Can make the builder pattern more concise.

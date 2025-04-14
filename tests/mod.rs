@@ -8,6 +8,11 @@ fn readme_example_with_crate() {
         y: f64
     }
 
+    #[derive(Debug, PartialEq)]
+    struct ProbabilityMap {
+        data: Vec<(Point, f64)>
+    }
+
     impl Point {
         fn new(x: f64, y: f64) -> Self {
             Point { x, y }
@@ -42,13 +47,16 @@ fn readme_example_with_crate() {
         .into_iter()
         .filter(|(_point, probability)| *probability > 0.0)
         .collect::<Vec<_>>()
+        .apply(|data|
+            ProbabilityMap { data }
+        )
     ;
 
-    assert_eq!(finalized_data, [
+    assert_eq!(finalized_data, ProbabilityMap { data: [
         (Point::new(-0.71, -0.03), 0.151),
         (Point::new(8.23, -8.78), 0.803),
         (Point::new(-3.75, 3.33), 0.815),
-    ].to_vec())
+    ].to_vec() })
 }
 
 #[test]
@@ -57,6 +65,11 @@ fn readme_example_without_crate() {
     struct Point {
         x: f64,
         y: f64
+    }
+
+    #[derive(Debug, PartialEq)]
+    struct ProbabilityMap {
+        data: Vec<(Point, f64)>
     }
 
     impl Point {
@@ -90,17 +103,18 @@ fn readme_example_without_crate() {
         .all(|(_, probability)| (0.0..=1.0).contains(probability))
     );
 
-    let finalized_data = sorted
-        .into_iter()
-        .filter(|(_point, probability)| *probability > 0.0)
-        .collect::<Vec<_>>()
-    ;
+    let finalized_data = ProbabilityMap {
+        data: sorted
+            .into_iter()
+            .filter(|(_point, probability)| *probability > 0.0)
+            .collect::<Vec<_>>()
+    };
 
-    assert_eq!(finalized_data, [
+    assert_eq!(finalized_data, ProbabilityMap { data: [
         (Point::new(-0.71, -0.03), 0.151),
         (Point::new(8.23, -8.78), 0.803),
         (Point::new(-3.75, 3.33), 0.815),
-    ].to_vec())
+    ].to_vec() })
 }
 
 #[test]
